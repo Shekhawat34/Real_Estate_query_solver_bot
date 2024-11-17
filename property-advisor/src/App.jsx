@@ -9,6 +9,7 @@ function App() {
   const [activeImage, setActiveImage] = useState({});
   const [propertiesLoading, setPropertiesLoading] = useState(true);
   const [propertiesError, setPropertiesError] = useState(false);
+  const [filteredProperties, setFilteredProperties] = useState([]);
 
   useEffect(() => {
     setPropertiesLoading(true);
@@ -61,7 +62,23 @@ function App() {
       });
 
       const data = await response.json();
-      setChatHistory((prev) => [...prev, { type: 'bot', content: data.response }]);
+
+      // Extract location from chatbot response for filtering properties
+      const locationMatch = /in ([a-zA-Z\s]+)/.exec(data.response); // Adjust regex as needed
+      const location = locationMatch ? locationMatch[1].trim() : '';
+
+      let filtered = [];
+      if (location) {
+        filtered = properties.filter(property =>
+          property.location.toLowerCase().includes(location.toLowerCase())
+        );
+        setFilteredProperties(filtered);
+      }
+
+      setChatHistory((prev) => [
+        ...prev,
+        { type: 'bot', content: data.response, properties: filtered }
+      ]);
     } catch (error) {
       console.error('Error:', error);
       setChatHistory((prev) => [
@@ -69,6 +86,7 @@ function App() {
         {
           type: 'bot',
           content: 'Sorry, there was an error processing your request.',
+          properties: []
         },
       ]);
     }
@@ -135,7 +153,29 @@ function App() {
         <div className="chat-history">
           {chatHistory.map((msg, index) => (
             <div key={index} className={`chat-message ${msg.type}`}>
-              {msg.content}
+              <p>{msg.content}</p>
+              {msg.type === 'bot' && msg.properties && msg.properties.length > 0 && (
+                <div className="filtered-properties">
+                  {msg.properties.map((property, propIndex) => (
+                    <div key={propIndex} className="filtered-property-card">
+                      <h4>{property.name}</h4>
+                      <div className="filtered-image-carousel">
+                        {property.images &&
+                          property.images.map((image, imgIndex) => (
+                            <img
+                              key={imgIndex}
+                              src={image}
+                              alt={`${property.name} - Image ${imgIndex + 1}`}
+                              className="filtered-property-image"
+                              loading="lazy"
+                            />
+                          ))}
+                      </div>
+                      <p className="location">{property.location}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
           {loading && <div className="loading">Loading...</div>}

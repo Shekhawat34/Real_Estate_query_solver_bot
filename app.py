@@ -39,13 +39,13 @@ def identify_query_type(user_message):
     """Identify the type of query being asked"""
     message = user_message.lower()
     
-    if any(word in message for word in ['where', 'location', 'area', 'near']):
+    if re.search(r'\b(where|location|area|near|in)\b', message):
         return 'location'
-    elif any(word in message for word in ['price', 'cost', 'budget', 'expensive', 'cheap']):
+    elif re.search(r'\b(price|cost|budget|expensive|cheap)\b', message):
         return 'price'
-    elif any(word in message for word in ['bhk', 'bedroom', 'bathroom', 'size', 'square']):
+    elif re.search(r'\b(bhk|bedroom|bathroom|size|square)\b', message):
         return 'properties'
-    elif any(word in message for word in ['amenity', 'facility', 'feature', 'parking', 'pool', 'gym']):
+    elif re.search(r'\b(amenity|facility|feature|parking|pool|gym)\b', message):
         return 'amenities'
     return 'general'
 
@@ -56,7 +56,7 @@ def filter_properties(user_message, query_type):
     
     if query_type == 'location':
         # Extract location keywords and match exactly
-        locations = re.findall(r'\b\w+(?:\s+\w+)*\b', message)
+        locations = re.findall(r'\b(?:near|in)?\s*(\w+(?:\s+\w+)*)\b', message)
         filtered_properties = [
             prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
             if any(loc.lower() in prop["location"].lower() for loc in locations)
@@ -108,6 +108,12 @@ def chat():
         # Filter properties based on query type and message
         filtered_properties = filter_properties(user_message, query_type)
         
+        # Extract property names and images from the filtered properties
+        property_images = [
+            {"name": prop["name"], "images": prop.get("images", [])}
+            for prop in filtered_properties
+        ]
+        
         # Convert filtered properties to string
         properties_str = json.dumps(filtered_properties, indent=2)
         
@@ -120,10 +126,11 @@ def chat():
         
         if not response:
             return jsonify({
-                'response': "I couldn't find any properties matching your specific criteria."
+                'response': "I couldn't find any properties matching your specific criteria.",
+                'properties': []
             })
             
-        return jsonify({'response': response})
+        return jsonify({'response': response, 'properties': property_images})
         
     except Exception as e:
         print("Error:", e)
