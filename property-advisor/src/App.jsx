@@ -11,12 +11,11 @@ function App() {
   const [propertiesError, setPropertiesError] = useState(false);
 
   useEffect(() => {
-    // Fetch properties when the component mounts
     setPropertiesLoading(true);
     fetch('http://localhost:5000/api/properties')
       .then((response) => response.json())
       .then((data) => {
-        console.log('Fetched properties:', data);  // Debugging line
+        console.log('Fetched properties:', data); // Debugging line
         setProperties(data.residential || []);
         setPropertiesError(false);
       })
@@ -28,6 +27,22 @@ function App() {
         setPropertiesLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActiveImage((prevActiveImage) => {
+        const newActiveImage = { ...prevActiveImage };
+        properties.forEach((property) => {
+          const currentIndex = prevActiveImage[property.name] || 0;
+          const nextIndex = (currentIndex + 1) % property.images.length;
+          newActiveImage[property.name] = nextIndex;
+        });
+        return newActiveImage;
+      });
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(intervalId);
+  }, [properties]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -81,12 +96,6 @@ function App() {
                       alt={`${property.name} - Image ${imgIndex + 1}`}
                       className={`property-image ${activeImage[property.name] === imgIndex ? 'active' : ''}`}
                       loading="lazy"
-                      onClick={() =>
-                        setActiveImage({
-                          ...activeImage,
-                          [property.name]: imgIndex,
-                        })
-                      }
                     />
                   ))}
               </div>

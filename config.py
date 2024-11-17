@@ -78,7 +78,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4-5 BHK",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-raintree-park"],
-          "image_url":[
+          "images":[
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/5cbedba8-49d0-4a1a-b271-b3abe7affb17.webp",
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/4467e616-068d-44fc-8b83-de5cf464e25e.webp",
                        ],
@@ -97,7 +97,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-camden-gardens"],
-          "image_url":[
+          "images":[
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/ca4e12d9-c162-4b4c-a3d9-df7c31b26a57.webp",
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/f3671a39-b454-4f04-ac07-9ff017ef3723.webp",
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/d4a39a37-706f-431f-8589-680b53076897.webp",
@@ -119,7 +119,7 @@ PROPERTY_DATA = {
           "bedrooms":"Villa Apartments",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/hyderabad/the-prestige-city-rajendra-nagar"],
-          "image_url":[
+          "images":[
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/abf20088-d234-4f6d-8e8e-f32c1a25b70a.webp",
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/abf20088-d234-4f6d-8e8e-f32c1a25b70a.webp"
                       ],
@@ -139,7 +139,7 @@ PROPERTY_DATA = {
           "bedrooms":"2-3-3.5-4 BHK",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-somerville"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/f98d3d6d-5316-482c-9471-1917621a6881.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/a0583e3c-9ebd-46e9-8771-d84fc2f67fbb.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/a0583e3c-9ebd-46e9-8771-d84fc2f67fbb.webp"
@@ -159,7 +159,7 @@ PROPERTY_DATA = {
           "bedrooms":"4-5 BHK",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/hyderabad/prestige-vaishnaoi-rainbow-waters"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/3d93c6fd-0646-431c-b33e-c7e76de80d83.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/bb307132-ad03-40b3-98d9-68f37e4764b2.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/469624c0-4af8-4b71-ab1e-ece166f0b0e1.webp"
@@ -179,7 +179,7 @@ PROPERTY_DATA = {
           "bedrooms":"5 BHK",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/hyderabad/the-prestige-city-rajendra-nagar/bellagio"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/895bb348-bcc5-401a-8723-2eb6a2e1688e.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/bb307132-ad03-40b3-98d9-68f37e4764b2.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/3e2745f7-09bf-471f-8e2c-37c8c7833a5a.webp",
@@ -201,7 +201,7 @@ PROPERTY_DATA = {
           "bedrooms":"1-2-3-4 BHK",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/hyderabad/the-prestige-city-rajendra-nagar/apartment"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/e2331e3d-0789-49da-9041-191dd98279e2.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/724cc809-2ba4-44ed-a5e7-3e54bba99bc5.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/12312fee-74b6-479d-8d27-f207bae04c97.webp"
@@ -222,7 +222,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-glenbrook"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/c1cd6c3d-bb5c-4177-a387-1f611d9db5cc.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/6ac8b2f6-241d-432d-8278-10a92de8a63c.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/be924875-855e-4b47-ac8c-3f16111fde0e.webp"
@@ -243,7 +243,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"New Launch",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/hyderabad/prestige-clairemont"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/188ee253-7520-4a92-8236-80b2de568119.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/566f179a-bf98-4739-8dea-67cb887b68bb.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/d4fdbc0c-c55d-4ed3-a058-eb7d24ee4219.webp"
@@ -263,7 +263,7 @@ PROPERTY_DATA = {
           "bedrooms":"2-3 BHK",
           "project status":"Under Construction",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/mumbai/the-prestige-city-mulund/bellanza"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/93eee1bc-31cb-4bf7-9f09-8c98576bb1d4.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/f6c7e0ca-643b-41f3-a99a-ea52661a5fe8.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/8684efea-03d7-449a-8e03-b78259818f4f.webp"
@@ -283,7 +283,7 @@ PROPERTY_DATA = {
           "bedrooms":"2-3 BHK",
           "project status":"Under Construction",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/cochin/prestige-panorama"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/2a4ca19f-2b22-4c0d-a65a-7f6830622fc2.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/4aaa98a0-c229-48f9-93e1-8c203661b437.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/2e99f621-cbbc-40e5-8e12-2a6a43c2d659.webp",
@@ -305,7 +305,7 @@ PROPERTY_DATA = {
           "bedrooms":"2-3 BHK",
           "project status":"Under Construction",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/cochin/prestige-cityscape"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/56e48d82-4dcb-4d14-9cae-3b6e5b148cf5.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/6c592577-395e-4eb8-9eab-49149062c2c1.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/642bebbf-4989-4e38-86e2-e3533f78abbb.webp"
@@ -325,7 +325,7 @@ PROPERTY_DATA = {
           "bedrooms":"4 BHK",
           "project status":"Under Construction",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/mumbai/prestige-daffodils"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/7fc3018f-8156-4c67-9b1e-9d19b362de1a.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/6e87d3e8-60de-47f0-b9d6-bf8fd88a6e74.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/9db0ee1d-7075-495f-9edd-d22cb6051875.webp"
@@ -345,7 +345,7 @@ PROPERTY_DATA = {
           "bedrooms":"4 BHK",
           "project status":"Under Construction",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/mumbai/prestige-ocean-towers"],
-          "image_url":[
+          "images":[
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/9c883fb7-614a-45da-a23f-911a9e1ebe43.webp",
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/9c883fb7-614a-45da-a23f-911a9e1ebe43.webp"
                        ],
@@ -364,7 +364,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"Under Construction",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/cochin/prestige-eden-garden"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/b45ff010-2c72-478d-8ef9-83c27d7ef6ff.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/379f9621-2665-46de-aa1a-0628f8346526.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/8caad229-696e-4eb8-946e-3414434855c8.webp",
@@ -386,7 +386,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"Under Construction",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/hyderabad/prestige-beverly-hills"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/f8ba86b7-8383-4c9d-9514-618e03364881.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/b1e94b79-36f5-468d-afb8-c73f0b849b0f.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/19943ce2-fee0-43cc-9ec7-2edde9622317.webp",
@@ -409,7 +409,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"Under Construction",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/kozhikode/prestige-ocean-pearl"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/7b280ab7-0344-46ba-bf30-221131e74f55.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/075e36d9-60f3-4bf1-83c0-204992deacfd.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/d501661c-d994-4642-ad4c-1b6948cabfeb.webp",
@@ -431,7 +431,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"Nearing Completion",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/mumbai/prestige-jasdan-classic"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/8271cad9-b94b-407b-a17c-33e7ab9134a2.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/123fc376-52b0-4c8d-be89-4b6a433f7699.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/a36998e6-7e3c-4d39-ac77-d69dbab7be39.webp"
@@ -452,7 +452,7 @@ PROPERTY_DATA = {
           "bedrooms":"2-3 BHK",
           "project status":"Nearing Completion",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/mumbai/the-prestige-city-mulund/siesta"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/2bbbd2bc-7757-4136-8795-f84acb9e0e66.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/2bbbd2bc-7757-4136-8795-f84acb9e0e66.webp",
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/d4a39a37-706f-431f-8589-680b53076897.webp",
@@ -474,7 +474,7 @@ PROPERTY_DATA = {
           "total units":"34 units",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-botanique"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/71bda1e6-b538-492e-ad23-93735a484460.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/6e93df43-0e9e-4d57-83fa-b94ee13698e6.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/e1bb5a6c-6e18-4232-b86e-462e2c1159d8.webp",
@@ -496,7 +496,7 @@ PROPERTY_DATA = {
           "bedrooms":"2-3 BHK",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/cochin/prestige-hillside-gateway"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/2aae651c-33ba-4be0-acf8-0147dc05fd13.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/8c1ba8fe-425f-4192-938b-5973905e3cfe.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/4b339c31-ae9b-4951-b1d2-f33ae83695b6.webp"
@@ -516,7 +516,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-leela-residences"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/cfde75b6-a03c-4044-91c8-5514efe02e12.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/77f43c33-1f5e-4874-8608-555422bcb0ea.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/c82cc916-d9ea-442c-bb8b-12066fa02c8f.webp",
@@ -537,7 +537,7 @@ PROPERTY_DATA = {
           "bedrooms":"2 BHK",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/mangalore/prestige-valley-crest"],
-          "image_url":[
+          "images":[
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/96d81d1a-d493-4b41-be6a-c4f1bbbe8f8b.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/8767edda-3685-4fd7-9fea-dbfeeb1a7ea3.webp",
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/b7aaf37a-10de-4748-945e-5ae94ffe2a5a.webp",
@@ -559,7 +559,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/goa/prestige-ocean-crest"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/fc740c89-5e68-4ecf-a0ac-31f2e925589e.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/6b38fa70-373f-4c55-a13a-416b8e13352b.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/9d61667b-c7fe-4091-a7db-b6215a625d9c.webp"
@@ -580,7 +580,7 @@ PROPERTY_DATA = {
           "bedrooms":"1-2-3 BHK",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/chennai/prestige-windsor-park"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/9fd4c6f8-96c5-4342-a8b4-ae16b8762996.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/fd3cd55c-a5e9-45fa-86b0-9d66267d9d12.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/a0596815-e3f5-451b-a703-1f754e934983.webp"
@@ -601,7 +601,7 @@ PROPERTY_DATA = {
           "bedrooms":"3-4 BHK",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/mangalore/prestige-palm-residences"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/446d36d6-6f9e-4653-ab51-fee751bb2a79.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/928461df-d7a1-4012-8827-9cf5cf4cfadf.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/efefaa05-ef05-4eb2-baa0-7ffe02a6cf88.webp",
@@ -623,7 +623,7 @@ PROPERTY_DATA = {
           "total units":"2240 units",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/hyderabad/prestige-high-fields"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/e03084fe-f244-4f1e-8c10-592ba0c22a30.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/1bc0c43d-24af-4a18-bad5-7da7fd232d24.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/917ea033-a42e-4fd4-83ee-8bb3e4e92451.webp",
@@ -644,7 +644,7 @@ PROPERTY_DATA = {
           "bedrooms":"3 BHK",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-spencer-heights"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/f15c1f69-9092-402e-8b04-94a79905eb35.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/639fd93d-a5c7-4570-83ee-9e319501a01c.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/7ee117bd-90f8-4b71-8e92-eeb0f37a621e.webp",
@@ -666,7 +666,7 @@ PROPERTY_DATA = {
           "bedrooms":"3 BHK",
           "project status":"Ready To Move In",
           "property_url":["https://www.prestigeconstructions.com/residential-projects/hyderabad/prestige-tranquil"],
-          "image_url":[
+          "images":[
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/0801a5e7-2f02-4dac-a14b-5ecfd2f5ec0c.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/13889a8b-71e5-42e3-b51e-340583df1a1f.webp",
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/e5b4a2a1-a0af-415b-b2c0-39901abd1e5c.webp"
