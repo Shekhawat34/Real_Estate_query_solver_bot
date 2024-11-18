@@ -36,89 +36,89 @@ prompt = PromptTemplate(
 chain = LLMChain(llm=llm, prompt=prompt)
 
 def identify_query_type(user_message):
-    """Identify the type of query being asked"""
+    """Identify the types of query components, allowing for mixed questions."""
     message = user_message.lower()
+    query_types = []
     
+    if re.search(r'\b(name|property name|listing|called|known as)\b', message):
+        query_types.append('name')
     if re.search(r'\b(where|location|area|near|in)\b', message):
-        return 'location'
-    elif re.search(r'\b(price|cost|budget|expensive|cheap)\b', message):
-        return 'price'
-    elif re.search(r'\b(bhk|bedroom|bedrooms|bathroom|size|square)\b', message):
-        return 'properties'
-    elif re.search(r'\b(amenity|facility|feature|parking|pool|gym)\b', message):
-        return 'amenities'
-    elif re.search(r'\b(development size|square feet|sqft|size)\b', message):
-        return 'development_size'
-    elif re.search(r'\b(bedrooms|bedroom|bhk)\b', message):
-        return 'bedrooms'
-    return 'general'
+        query_types.append('location')
+    if re.search(r'\b(price|cost|budget|expensive|cheap)\b', message):
+        query_types.append('price')
+    if re.search(r'\b(bhk|bedroom|bedrooms|bathroom|size|square)\b', message):
+        query_types.append('properties')
+    if re.search(r'\b(amenity|facility|feature|parking|pool|gym)\b', message):
+        query_types.append('amenities')
+    if re.search(r'\b(development size|square feet|sqft|size)\b', message):
+        query_types.append('development_size')
+    if re.search(r'\b(bedrooms|bedroom|bhk)\b', message):
+        query_types.append('bedrooms')
+    
+    # Default to general if no specific type is identified
+    if not query_types:
+        query_types.append('general')
+    
+    return query_types
 
-def filter_properties(user_message, query_type):
-    """Enhanced property filtering based on query type and specific criteria"""
+def filter_properties(user_message, query_types):
+    """Filter properties based on multiple query criteria in the message."""
     message = user_message.lower()
-    filtered_properties = []
+    filtered_properties = PROPERTY_DATA['residential'] + PROPERTY_DATA.get('rental', [])
     
-    if query_type == 'location':
-        # Extract location keywords and match exactly
-        locations = re.findall(r'\b(?:near|in)?\s*(\w+(?:\s+\w+)*)\b', message)
-        filtered_properties = [
-            prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
-            if any(loc.lower() in prop["location"].lower() for loc in locations)
-        ]
-    
-    elif query_type == 'price':
-        # Extract price range if mentioned
-        price_matches = re.findall(r'\d+', message)
-        if price_matches:
-            target_price = int(price_matches[0])
-            # Consider price for residential properties and rent_price for rental properties
+    for query_type in query_types:
+        if query_type == 'location':
+            locations = re.findall(r'\b(?:near|in|location|area)?\s*(\w+(?:\s+\w+)*)\b', message)
+            if locations:
+                filtered_properties = [
+                    prop for prop in filtered_properties
+                    if any(re.search(r'\b' + re.escape(loc.strip()) + r'\b', prop["location"], re.IGNORECASE) for loc in locations)
+                ]
+        
+        elif query_type == 'bedrooms':
+            bedroom_matches = re.findall(r'(\d+)\s*bhk', message)
+            if bedroom_matches:
+                target_bedrooms = bedroom_matches[0]
+                filtered_properties = [
+                    prop for prop in filtered_properties
+                    if target_bedrooms in prop.get("bedrooms", "").lower()
+                ]
+        
+        elif query_type == 'name':
+            name_search = re.findall(r'\b(?:called|name|known as)?\s*(\w+(?:\s+\w+)*)\b', message)
+            if name_search:
+                target_name = name_search[0].strip()
+                filtered_properties = [
+                    prop for prop in filtered_properties
+                    if prop["name"].lower() == target_name.lower()
+                ]
+        
+        elif query_type == 'price':
+            price_matches = re.findall(r'\d+', message)
+            if price_matches:
+                target_price = int(price_matches[0])
+                filtered_properties = [
+                    prop for prop in filtered_properties
+                    if (prop.get("price") and abs(prop.get("price", 0) - target_price) <= target_price * 0.2)
+                ]
+        
+        elif query_type == 'amenities':
             filtered_properties = [
-                prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
-                if (prop.get("price") and abs(prop.get("price", 0) - target_price) <= target_price * 0.2) or
-                   (prop.get("rent_price") and abs(prop.get("rent_price", 0) - target_price) <= target_price * 0.2)
+                prop for prop in filtered_properties
+                if any(amenity.lower() in message for amenity in prop.get("amenities", {}).values())
             ]
-    
-    elif query_type == 'properties':
-        # Match specific property features
-        filtered_properties = [
-            prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
-            if any(keyword in json.dumps(prop).lower() for keyword in message.split())
-        ]
-    
-    elif query_type == 'amenities':
-        # Match specific amenities
-        filtered_properties = [
-            prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
-            if any(amenity.lower() in message for amenity in prop.get("amenities", []))
-        ]
-    
-    elif query_type == 'development_size':
-        # Match properties based on development size
-        size_matches = re.findall(r'\d+', message)
-        if size_matches:
-            target_size = int(size_matches[0])
-            filtered_properties = [
-                prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
-                if prop.get("development_size") and abs(prop["development_size"] - target_size) <= target_size * 0.1
-            ]
-    
-    elif query_type == 'bedrooms':
-        # Match properties based on the number of bedrooms
-        bedroom_matches = re.findall(r'\d+', message)
-        if bedroom_matches:
-            target_bedrooms = int(bedroom_matches[0])
-            filtered_properties = [
-                prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
-                if prop.get("bedrooms") == target_bedrooms
-            ]
-    
-    else:  # general query
-        filtered_properties = [
-            prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
-            if any(keyword in json.dumps(prop).lower() for keyword in message.split())
-        ]
-    
-    return filtered_properties[:5]  # Limit to top 5 most relevant matches
+        
+        elif query_type == 'development_size':
+            size_matches = re.findall(r'\d+', message)
+            if size_matches:
+                target_size = int(size_matches[0])
+                filtered_properties = [
+                    prop for prop in filtered_properties
+                    if prop.get("development_size") and abs(int(prop["development_size"].split()[0]) - target_size) <= target_size * 0.1
+                ]
+
+    # Always return a list of properties that match the criteria, up to a certain number
+    return filtered_properties[:5]  # Limit to top 5 properties to avoid overloading the response
 
 @app.route('/api/chat', methods=['POST'])
 def chat():
@@ -126,11 +126,11 @@ def chat():
     user_message = data.get('message', '')
     
     try:
-        # Identify query type
-        query_type = identify_query_type(user_message)
+        # Identify query types in the user message
+        query_types = identify_query_type(user_message)
         
-        # Filter properties based on query type and message
-        filtered_properties = filter_properties(user_message, query_type)
+        # Filter properties based on identified query types
+        filtered_properties = filter_properties(user_message, query_types)
         
         # Extract property names and images from the filtered properties
         property_images = [
@@ -138,20 +138,20 @@ def chat():
             for prop in filtered_properties
         ]
         
-        # Convert filtered properties to string
+        # Convert filtered properties to a string for input to LangChain
         properties_str = json.dumps(filtered_properties, indent=2)
         
         # Get response from LangChain
         response = chain.run(
             question=user_message,
             properties=properties_str,
-            query_type=query_type
+            query_type=", ".join(query_types)
         )
         
         if not response:
             return jsonify({
                 'response': "I couldn't find any properties matching your specific criteria.",
-                'properties': []
+                'properties': property_images
             })
             
         return jsonify({'response': response, 'properties': property_images})
