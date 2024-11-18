@@ -66,13 +66,34 @@ def filter_properties(user_message, query_types):
     message = user_message.lower()
     filtered_properties = PROPERTY_DATA['residential'] + PROPERTY_DATA.get('rental', [])
     
+    # Enhanced location matching with more flexible parsing
+    def match_location(prop_location, search_locations):
+        prop_parts = prop_location.lower().split(', ')
+        return any(
+            any(search_loc in prop_part for prop_part in prop_parts) 
+            for search_loc in search_locations
+        )
+    
     for query_type in query_types:
         if query_type == 'location':
-            locations = re.findall(r'\b(?:near|in|location|area)?\s*(\w+(?:\s+\w+)*)\b', message)
+            # More comprehensive location extraction
+            location_patterns = [
+                r'\b(?:in|near|around)\s*([\w\s]+)',
+                r'\b([\w\s]+)\s*properties\b',
+                r'\b([\w\s]+)\s*location\b'
+            ]
+            
+            locations = []
+            for pattern in location_patterns:
+                locations.extend(re.findall(pattern, message, re.IGNORECASE))
+            
+            # Remove duplicates and clean locations
+            locations = list(set(loc.strip() for loc in locations if loc.strip()))
+            
             if locations:
                 filtered_properties = [
                     prop for prop in filtered_properties
-                    if any(re.search(r'\b' + re.escape(loc.strip()) + r'\b', prop["location"], re.IGNORECASE) for loc in locations)
+                    if match_location(prop["location"], [loc.lower() for loc in locations])
                 ]
         
         elif query_type == 'bedrooms':
