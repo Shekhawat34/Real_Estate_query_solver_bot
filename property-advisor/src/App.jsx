@@ -160,18 +160,22 @@ function App() {
                     <div key={propIndex} className="filtered-property-card">
                       <h4>{property.name}</h4>
                       <div className="filtered-image-carousel">
-                        {property.images &&
-                          property.images.map((image, imgIndex) => (
-                            <img
-                              key={imgIndex}
-                              src={image}
-                              alt={`${property.name} - Image ${imgIndex + 1}`}
-                              className="filtered-property-image"
-                              loading="lazy"
-                            />
-                          ))}
+                        <div className="filtered-images-container">
+                          {property.images &&
+                            property.images.map((image, imgIndex) => (
+                              <img
+                                key={imgIndex}
+                                src={image}
+                                alt={`${property.name} - Image ${imgIndex + 1}`}
+                                className="filtered-property-image"
+                                loading="lazy"
+                              />
+                            ))}
+                        </div>
                       </div>
                       <p className="location">{property.location}</p>
+                      <p><strong>Development Size:</strong> {property.development_size}</p>
+                      <p><strong>Bedrooms:</strong> {property.bedrooms}</p>
                     </div>
                   ))}
                 </div>

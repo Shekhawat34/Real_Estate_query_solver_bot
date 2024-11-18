@@ -43,10 +43,14 @@ def identify_query_type(user_message):
         return 'location'
     elif re.search(r'\b(price|cost|budget|expensive|cheap)\b', message):
         return 'price'
-    elif re.search(r'\b(bhk|bedroom|bathroom|size|square)\b', message):
+    elif re.search(r'\b(bhk|bedroom|bedrooms|bathroom|size|square)\b', message):
         return 'properties'
     elif re.search(r'\b(amenity|facility|feature|parking|pool|gym)\b', message):
         return 'amenities'
+    elif re.search(r'\b(development size|square feet|sqft|size)\b', message):
+        return 'development_size'
+    elif re.search(r'\b(bedrooms|bedroom|bhk)\b', message):
+        return 'bedrooms'
     return 'general'
 
 def filter_properties(user_message, query_type):
@@ -87,6 +91,26 @@ def filter_properties(user_message, query_type):
             prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
             if any(amenity.lower() in message for amenity in prop.get("amenities", []))
         ]
+    
+    elif query_type == 'development_size':
+        # Match properties based on development size
+        size_matches = re.findall(r'\d+', message)
+        if size_matches:
+            target_size = int(size_matches[0])
+            filtered_properties = [
+                prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
+                if prop.get("development_size") and abs(prop["development_size"] - target_size) <= target_size * 0.1
+            ]
+    
+    elif query_type == 'bedrooms':
+        # Match properties based on the number of bedrooms
+        bedroom_matches = re.findall(r'\d+', message)
+        if bedroom_matches:
+            target_bedrooms = int(bedroom_matches[0])
+            filtered_properties = [
+                prop for prop in PROPERTY_DATA['residential'] + PROPERTY_DATA['rental']
+                if prop.get("bedrooms") == target_bedrooms
+            ]
     
     else:  # general query
         filtered_properties = [

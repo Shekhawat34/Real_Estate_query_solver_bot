@@ -177,6 +177,21 @@
   color: #333;
 }
 
+.filtered-images-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.filtered-property-image {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
 .chat-input-form {
   display: flex;
   padding: 15px;
