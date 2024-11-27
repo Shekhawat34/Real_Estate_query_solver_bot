@@ -5,17 +5,16 @@ function PropertyCard({ property, activeImage }) {
   return (
     <div className="property-card">
       <div className="image-carousel">
-        {property.images &&
-          property.images.map((image, imgIndex) => (
-            <img
-              key={imgIndex}
-              src={image}
-              alt={`${property.name} - Image ${imgIndex + 1}`}
-              className={`property-image ${activeImage[property.name] === imgIndex ? 'active' : ''}`}
-              onError={(e) => e.target.src = '/fallback-image.jpg'} // Replace with a valid fallback image path
-              loading="lazy"
-            />
-          ))}
+        {property.images.map((image, imgIndex) => (
+          <img
+            key={imgIndex}
+            src={image}
+            alt={`${property.name} - Image ${imgIndex + 1}`}
+            className={`property-image ${activeImage[property.name] === imgIndex ? 'active' : ''}`}
+            onError={(e) => (e.target.src = '/fallback-image.jpg')}
+            loading="lazy"
+          />
+        ))}
       </div>
       <div className="property-info">
         <h3>{property.name}</h3>
@@ -30,17 +29,16 @@ function PropertyCard({ property, activeImage }) {
         <div className="amenities">
           <h4>Amenities:</h4>
           <div className="amenities-grid">
-            {property.amenities &&
-              Object.entries(property.amenities).map(([category, items]) => (
-                <div key={category} className="amenity-category">
-                  <h5>{category.charAt(0).toUpperCase() + category.slice(1)}</h5>
-                  <ul>
-                    {items.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            {Object.entries(property.amenities).map(([category, items]) => (
+              <div key={category} className="amenity-category">
+                <h5>{category.charAt(0).toUpperCase() + category.slice(1)}</h5>
+                <ul>
+                  {items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
