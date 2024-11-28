@@ -92,10 +92,10 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!message.trim()) return;
-  
+
     setChatHistory((prev) => [...prev, { type: 'user', content: message }]);
     setLoading(true);
-  
+
     try {
       const response = await fetch('http://localhost:5000/api/chat', {
         method: 'POST',
@@ -104,10 +104,9 @@ function App() {
         },
         body: JSON.stringify({ message }),
       });
-  
+
       const data = await response.json();
       
-      // More comprehensive location extraction
       const locationPatterns = [
         /in\s+([\w\s]+)/i,
         /near\s+([\w\s]+)/i,
@@ -115,7 +114,7 @@ function App() {
         /([\w\s]+)\s*properties/i,
         /([\w\s]+)\s*location/i
       ];
-  
+
       let filtered = [];
       for (let pattern of locationPatterns) {
         const match = pattern.exec(data.response);
@@ -127,18 +126,16 @@ function App() {
               property.location.toLowerCase().includes(locPart)
             )
           );
-          
           if (filtered.length > 0) break;
         }
       }
-  
-      // If no location-based filtering worked, use the backend's property images
+
       if (filtered.length === 0 && data.properties) {
         filtered = data.properties.map(propImg => 
           properties.find(p => p.name === propImg.name)
         ).filter(Boolean);
       }
-  
+
       setChatHistory((prev) => [
         ...prev,
         { 
@@ -158,7 +155,7 @@ function App() {
         },
       ]);
     }
-  
+
     setLoading(false);
     setMessage('');
   };
