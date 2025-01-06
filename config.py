@@ -32,7 +32,7 @@ PROPERTY_DATA = {
         "total_units":"316 units",
         "bedrooms":"3-4 BHK",
         "project_status":"New Launch",
-        "project url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-pine-forest"],
+        "project_url":["https://www.prestigeconstructions.com/residential-projects/bangalore/prestige-pine-forest"],
         "description": "Prestige Pine Forest gives you a lifestyle of abundance, with more space, more greenery and more privacy. Situated on quiet ECC Road in Whitefield, it also gives you plenty of access to the city. Enjoy homes that have been designed to enhance your life in the best way possible.",
         "images": [
             "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/a38160b3-04ea-468f-85da-c5c45e8b9af3.webp",
@@ -55,7 +55,7 @@ PROPERTY_DATA = {
         "bedrooms": "3-4 BHK",
         "description": "Set at the foothills of Yogi Hills, a reserve within the Sanjay Gandhi National Park, The Prestige City offers an enduring experience where the tranquility of nature captivates your senses for a lifetime.",
         "project_status":"New Launch",
-        "property url":["https://www.prestigeconstructions.com/residential-projects/mumbai/the-prestige-city-mulund/forest-hills"],
+        "property_url":["https://www.prestigeconstructions.com/residential-projects/mumbai/the-prestige-city-mulund/forest-hills"],
         "images": [
             "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/654bdf26-14d4-4048-bac3-01e9c3db32e9.webp",
             "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/02319ee1-f654-4703-8459-013585c8e3f5.webp",
@@ -708,7 +708,7 @@ PROPERTY_DATA = {
              "total_units":"3050 units",
              "bedrooms":"1-2-3 BHK",
              "description": "Prestige Finsbury Park is a large township destination of 25 acres situated adjacent to the aerotropolis within the IT/Aerospace and Hardware Park being developed by the KIADB, which will be the hub in the future for the IT and Aerospace sectors. The Park also has a limited allotment for residential developments within which Prestige Finsbury Park is located. Well reputed schools and colleges, healthcare facilities, as well as shopping and entertainment hubs, are all within easy reach.",
-             "project url":["https://www.prestigeconstructions.com/rental-projects/prestige-finsbury-park"],
+             "project_url":["https://www.prestigeconstructions.com/rental-projects/prestige-finsbury-park"],
              "Project staus":"For Rent",
              "images": [
                      "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/b4d75a78-91c8-48de-885a-73a9e462a1d0.webp",
@@ -727,7 +727,7 @@ PROPERTY_DATA = {
              "total_units":"158 units",
              "bedrooms":"3-3.5-4 BHK",
              "description": "Prestige Finsbury Park is a large township destination of 25 acres situated adjacent to the aerotropolis within the IT/Aerospace and Hardware Park being developed by the KIADB, which will be the hub in the future for the IT and Aerospace sectors. The Park also has a limited allotment for residential developments within which Prestige Finsbury Park is located. Well reputed schools and colleges, healthcare facilities, as well as shopping and entertainment hubs, are all within easy reach.",
-             "project url":["https://www.prestigeconstructions.com/rental-projects/prestige-fairfield"],
+             "project_url":["https://www.prestigeconstructions.com/rental-projects/prestige-fairfield"],
              "project status":"For Rent",
              "images": [
                        "https://prestigecorporatesite.s3.ap-south-1.amazonaws.com/projectgallery/636a98d6-63d8-4ab3-a1a3-20592a45716a.webp",
@@ -746,7 +746,7 @@ PROPERTY_DATA = {
             "total_units":"88 units",
             "bedrooms":"3-4 BHK",
             "description": "Located in the Banashankari neighbourhood of South Bengaluru, Prestige Primose Hills is a residential community that offers a serene, high quality lifestyle which is in perfect harmony with your preferences and expectations. You have a choice of one and two bedroom homes set in 13 towers that are spread across an expansive 15 acre site.",
-            "project url":["https://www.prestigeconstructions.com/rental-projects/prestige-leela-residences"],
+            "project_url":["https://www.prestigeconstructions.com/rental-projects/prestige-leela-residences"],
             "project status":"For Rent",
             "images": [
                 "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/48875dcc-9161-4c08-9a93-c42e9edd7739.webp",
@@ -765,7 +765,7 @@ PROPERTY_DATA = {
              "total_units":"206 units",
              "bedrooms":"4 BHK",
              "description": "Set to the backdrop of the picturesque Nandi Hills, across 275 acres, is Bangalore’s most premium golf resort – Prestige Golfshire. Dedicated to perfecting the art of luxurious living and a culture of leisure, it comes complete with ultra-luxurious independent villas, a 300-bed luxury hotel, a private lake and the piece de resistance, an 18-hole championship golf course. A 45-minute drive from the heart of Bangalore and a short 10-minute drive from the new Bangalore International Airport, Prestige Golfshire is as close to Bangalore’s business and commercial district as it is away from it all. Considering that there’s no escaping the lure of the 18-hole golf course designed by PGA Design Consulting, right outside your independent mansion at Prestige Golfshire, there is only one thing for you to do: Brush up your game of golf.",
-             "project url":["https://www.prestigeconstructions.com/rental-projects/prestige-golfshire"],
+             "project_url":["https://www.prestigeconstructions.com/rental-projects/prestige-golfshire"],
              "Project staus":"For Rent",
              "images": [
                      "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/d79c2b2e-10af-47f2-b2a2-24bd0778dc49.webp",
@@ -784,7 +784,7 @@ PROPERTY_DATA = {
              "total_units":"460 units",
              "bedrooms":"3-4 BHK",
              "description": "The name says it all. Titled after one of golf's most famous shrines, Prestige Augusta is the answer to every golfer's dream. A spanking nine hole course, a swank and fully equipped clubhouse, every amenity your lifestyle merits and a luxury home amidst all this. What could be better than that? Well, the location for one. Prestige Augusta is located in the pristine environs of Horamavu. Eminently accessible from the city centre and comfortably tucked away in a world of its own. Go ahead. Discover your new home on the green. Come home to Prestige Augusta.",
-             "project url":["https://www.prestigeconstructions.com/rental-projects/prestige-augusta-golf-village"],
+             "project_url":["https://www.prestigeconstructions.com/rental-projects/prestige-augusta-golf-village"],
              "project status":"For Rent",
              "images": [
                        "https://preossdev.s3.ap-south-1.amazonaws.com/projectgallery/6bfff499-0df3-4f4b-ae6b-dbe4b3342d72.webp",
